@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "80933539979",
+    "project_id": "swirlchat-3fda6",
+    "storage_bucket": "swirlchat-3fda6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80933539979:android:72877855e808b3b609048e",
+        "android_client_info": {
+          "package_name": "com.theleafapps.pro.swirlchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80933539979-n56thhp4oqpbqh9egq3e1m18c7v3h2nv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theleafapps.pro.swirlchat",
+            "certificate_hash": "3ec901b63635415caa66a1ec8442068111b896a0"
+          }
+        },
+        {
+          "client_id": "80933539979-rdpp4rubd1ck3ojufj5f6nsk1fj8tgui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzgLFuOqtowuNsdyb5YA5zFfRA0TiDlW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80933539979-rdpp4rubd1ck3ojufj5f6nsk1fj8tgui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
