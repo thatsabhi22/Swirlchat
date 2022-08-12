@@ -25,11 +25,11 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="150dp"
+            android:contentDescription="@string/get_userdata_image_cd"
             android:src="@drawable/ic_camera"
-            android:tint="@color/colorAccent"
             app:layout_anchor="@id/imgUser"
-            app:layout_anchorGravity="end|center" />
-
+            app:layout_anchorGravity="end|center"
+            app:tint="@color/colorAccent" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -51,28 +51,28 @@
             <EditText
                 android:id="@+id/edtUserName"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:background="@color/edittextColor"
-                android:hint="Username"
+                android:hint="@string/username_edittext_hint"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimary"
-                android:textSize="15dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/edtUserStatus"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:background="@color/edittextColor"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
-                android:text="Hey! I,m using this app"
+                android:text="@string/user_status_edittext_text"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -86,10 +86,8 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/colorPrimary"
-        android:text="Done"
+        android:text="@string/done_btn_text"
         android:textColor="@color/colorAccent"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
-
-
 </RelativeLayout>

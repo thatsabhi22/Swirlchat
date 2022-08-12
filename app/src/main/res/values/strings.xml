@@ -4,4 +4,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate_otp_text">Generate OTP</string>
+    <string name="verify_number_image_cd">verify number_image</string>
+    <string name="verify_otp_text">Verify OTP</string>
+    <string name="otp_hint">236478</string>
+    <string name="otp_sent_msg">We have sent you an OTP for \n verification phone number</string>
+    <string name="enter_otp_text">Enter OTP</string>
+    <string name="username_edittext_hint">Username</string>
+    <string name="user_status_edittext_text">Hey! I,m using this app</string>
+    <string name="done_btn_text">Done</string>
+    <string name="get_userdata_image_cd">get userdata image</string>
 </resources>
