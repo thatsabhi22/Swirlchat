@@ -56,8 +56,8 @@
             android:layout_height="50dp"
             app:ccp_autoFormatNumber="true"
             app:ccp_contentColor="@color/colorAccent"
-            app:ccp_countryPreference="PK"
-            app:ccp_defaultPhoneCode="92"
+            app:ccp_countryPreference="IN"
+            app:ccp_defaultPhoneCode="91"
             app:ccp_showFlag="false" />
 
         <View
@@ -90,9 +90,9 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/button_background"
-        android:text="Generate OTP"
+        android:text="@string/generate_otp_text"
         android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </RelativeLayout>
