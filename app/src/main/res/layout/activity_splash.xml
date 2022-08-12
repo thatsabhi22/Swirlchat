@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorAccent"
     tools:context=".ui.SplashActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imgSplash"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/chat_logo"
+        app:lottie_rawRes="@raw/splash_animated"
         app:lottie_repeatCount="2" />
 
     <TextView
@@ -24,7 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="@string/appName"
-        android:textColor="@color/colorAccent"
-        android:textSize="28sp"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorPrimary"
+        android:textSize="42sp"
         android:textStyle="bold" />
 </RelativeLayout>
