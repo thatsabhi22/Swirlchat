@@ -17,7 +17,4 @@ class GetUserData : Fragment() {
 
         return view
     }
-
-
-
 }
