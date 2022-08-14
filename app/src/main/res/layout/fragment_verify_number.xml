@@ -43,7 +43,7 @@
         android:textStyle="bold" />
 
     <com.chaos.view.PinView
-        android:id="@+id/otp_text_view"
+        android:id="@+id/otpTextView"
         style="@style/PinWidget.PinView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
         android:id="@+id/btnVerify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/otp_text_view"
+        android:layout_below="@+id/otpTextView"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_background"
