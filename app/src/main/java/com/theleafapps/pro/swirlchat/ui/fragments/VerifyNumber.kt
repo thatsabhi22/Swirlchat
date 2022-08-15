@@ -67,6 +67,16 @@ class VerifyNumber : Fragment() {
         }
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance(code: String) =
+            VerifyNumber().apply {
+                arguments = Bundle().apply {
+                    putString("Code", code)
+                }
+            }
+    }
+
     private fun checkPin(): Boolean {
         pin = binding?.otpTextView?.text.toString()
         if (pin.isEmpty()) {
