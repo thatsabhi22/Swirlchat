@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Swirlchat"
         tools:targetApi="q">
         <activity
+            android:name=".EditNameActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.Swirlchat.NoActionBar" />
         <activity
@@ -31,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
             android:value="true" />
