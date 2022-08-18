@@ -40,7 +40,7 @@ class SplashActivity : AppCompatActivity() {
                             databaseReference.updateChildren(map)
                         }
                     })
-                startActivity(Intent(this, DashBoard::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
             }
 
