@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.ActivityDashboardBinding
+import com.theleafapps.pro.swirlchat.ui.fragments.ChatFragment
 import com.theleafapps.pro.swirlchat.util.AppUtil
 
 class DashboardActivity : AppCompatActivity() {
