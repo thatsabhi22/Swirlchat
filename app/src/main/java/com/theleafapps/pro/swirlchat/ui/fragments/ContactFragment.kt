@@ -7,10 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.FragmentContactBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
+import com.theleafapps.pro.swirlchat.permission.AppPermission
 
 class ContactFragment : Fragment() {
 
@@ -48,6 +54,41 @@ class ContactFragment : Fragment() {
             }
         })
         return fragmentContactBinding.root
+    }
+
+    private fun getAppContact(mobileContact: ArrayList<UserModel>) {
+
+        val databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        val query = databaseReference.orderByChild("number")
+        query.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    appContacts = ArrayList()
+                    for (data in snapshot.children) {
+
+                        val number = data.child("number").value.toString()
+                        for (mobileModel in mobileContact) {
+                            if (mobileModel.number == number && number != phoneNumber) {
+                                val userModel = data.getValue(UserModel::class.java)
+                                appContacts.add(userModel!!)
+                            }
+                        }
+                    }
+
+                    fragmentContactBinding.recyclerViewContact.apply {
+                        layoutManager = LinearLayoutManager(context)
+                        setHasFixedSize(true)
+                        contactAdapter = ContactAdapter(appContacts)
+                        adapter = contactAdapter
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
     }
 
 }
