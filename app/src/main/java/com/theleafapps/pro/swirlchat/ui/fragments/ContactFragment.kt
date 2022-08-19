@@ -56,6 +56,45 @@ class ContactFragment : Fragment() {
         return fragmentContactBinding.root
     }
 
+    private fun getMobileContact() {
+
+        val projection = arrayOf(
+            ContactsContract.Data.DISPLAY_NAME,
+            ContactsContract.CommonDataKinds.Phone.NUMBER
+        )
+
+        val contentResolver = context!!.contentResolver
+        val cursor = contentResolver.query(
+            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+            projection,
+            null,
+            null,
+            null
+        )
+
+        if (cursor != null) {
+            mobileContacts = ArrayList()
+            while (cursor.moveToNext()) {
+
+                val name =
+                    cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                var number =
+                    cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+
+                number = number.replace("\\s".toRegex(), "")
+                val num = number.elementAt(0).toString()
+                if (num == "0")
+                    number = number.replaceFirst("(?:0)+".toRegex(), "+92")
+                val userModel = UserModel()
+                userModel.name = name
+                userModel.number = number
+                mobileContacts.add(userModel)
+            }
+            cursor.close()
+            getAppContact(mobileContacts)
+        }
+    }
+
     private fun getAppContact(mobileContact: ArrayList<UserModel>) {
 
         val databaseReference = FirebaseDatabase.getInstance().getReference("Users")
