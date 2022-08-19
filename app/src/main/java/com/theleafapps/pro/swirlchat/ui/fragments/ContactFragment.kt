@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.theleafapps.pro.swirlchat.R
+import com.theleafapps.pro.swirlchat.adapters.ContactAdapter
 import com.theleafapps.pro.swirlchat.databinding.FragmentContactBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
@@ -63,7 +64,7 @@ class ContactFragment : Fragment() {
             ContactsContract.CommonDataKinds.Phone.NUMBER
         )
 
-        val contentResolver = context!!.contentResolver
+        val contentResolver = requireContext().contentResolver
         val cursor = contentResolver.query(
             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
             projection,

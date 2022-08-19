@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.theleafapps.pro.swirlchat.databinding.ContactItemLayoutBinding
 import com.theleafapps.pro.swirlchat.ui.MessageActivity
 import com.theleafapps.pro.swirlchat.ui.UserInfoActivity
 import com.theleafapps.pro.swirlchat.entities.UserModel
@@ -39,8 +40,6 @@ class ContactAdapter(private var appContacts: ArrayList<UserModel>) :
             intent.putExtra("hisImage", userModel.image)
             it.context.startActivity(intent)
         }
-
-
     }
 
     override fun getItemCount(): Int {
@@ -49,7 +48,6 @@ class ContactAdapter(private var appContacts: ArrayList<UserModel>) :
 
     class ViewHolder(val contactItemLayoutBinding: ContactItemLayoutBinding) :
         RecyclerView.ViewHolder(contactItemLayoutBinding.root) {
-
     }
 
     override fun getFilter(): Filter {
@@ -83,5 +81,4 @@ class ContactAdapter(private var appContacts: ArrayList<UserModel>) :
             }
         }
     }
-
 }
