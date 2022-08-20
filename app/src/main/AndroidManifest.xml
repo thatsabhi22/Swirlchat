@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Swirlchat"
         tools:targetApi="q">
         <activity
+            android:name=".MessageActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
