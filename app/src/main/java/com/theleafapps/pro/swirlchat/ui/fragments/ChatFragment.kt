@@ -21,6 +21,7 @@ import com.theleafapps.pro.swirlchat.databinding.FragmentChatBinding
 import com.theleafapps.pro.swirlchat.entities.ChatListModel
 import com.theleafapps.pro.swirlchat.entities.ChatModel
 import com.theleafapps.pro.swirlchat.entities.UserModel
+import com.theleafapps.pro.swirlchat.ui.MessageActivity
 import com.theleafapps.pro.swirlchat.util.AppUtil
 
 class ChatFragment : Fragment() {
