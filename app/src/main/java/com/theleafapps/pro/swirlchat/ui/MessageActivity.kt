@@ -3,6 +3,9 @@ package com.theleafapps.pro.swirlchat.ui
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.theleafapps.pro.swirlchat.R
@@ -37,6 +40,57 @@ class MessageActivity : AppCompatActivity() {
         myName = sharedPreferences.getString("myName", "").toString()
         appPermission = AppPermission()
 
+        activityMessageBinding.activity = this
+
+        if (intent.hasExtra("chatId")) {
+
+            chatId = intent.getStringExtra("chatId")
+            hisId = intent.getStringExtra("hisId")
+            hisImage = intent.getStringExtra("hisImage")
+            readMessages(chatId!!)
+
+        } else {
+            hisId = intent.getStringExtra("hisId")
+            hisImage = intent.getStringExtra("hisImage")
+        }
+
+        activityMessageBinding.btnSend.setOnClickListener {
+            val message = activityMessageBinding.msgText.text.toString()
+            if (message.isEmpty())
+                Toast.makeText(this, "Enter Message", Toast.LENGTH_SHORT).show()
+            else {
+                sendMessage(message)
+
+                getToken(message)
+
+            }
+        }
+
+        activityMessageBinding.msgText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s.toString().isEmpty())
+                    typingStatus("false")
+                else
+                    typingStatus(hisId!!)
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+
+        activityMessageBinding.btnDataSend.setOnClickListener {
+            pickImage()
+        }
+
+        if (chatId == null)
+            checkChat(hisId!!)
+
+        checkOnlineStatus()
 
     }
 }
