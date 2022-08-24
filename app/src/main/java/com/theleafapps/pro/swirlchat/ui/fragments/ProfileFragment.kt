@@ -23,6 +23,7 @@ import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.theleafapps.pro.swirlchat.databinding.FragmentProfileBinding
 import com.theleafapps.pro.swirlchat.permission.AppPermission
+import com.theleafapps.pro.swirlchat.viewmodels.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
@@ -33,7 +34,6 @@ class ProfileFragment : Fragment() {
     private lateinit var storageReference: StorageReference
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
