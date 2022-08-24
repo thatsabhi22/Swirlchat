@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.theleafapps.pro.swirlchat.databinding.ActivityMessageBinding
+import com.theleafapps.pro.swirlchat.databinding.LeftItemLayoutBinding
+import com.theleafapps.pro.swirlchat.databinding.RightItemLayoutBinding
 import com.theleafapps.pro.swirlchat.entities.ChatListModel
 import com.theleafapps.pro.swirlchat.entities.MessageModel
 import com.theleafapps.pro.swirlchat.entities.UserModel
