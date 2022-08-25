@@ -96,6 +96,8 @@ dependencies {
 
     // Image Picker
     implementation  'io.ak1.pix:piximagepicker:1.6.3'
+    // Image Picker
+    implementation  'com.fxn769:pix:1.5.4'
 
     // Image Compressor
     implementation 'com.iceteck.silicompressorr:silicompressor:2.2.4'

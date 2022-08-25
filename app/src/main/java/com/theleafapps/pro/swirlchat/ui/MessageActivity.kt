@@ -37,6 +37,7 @@ import com.theleafapps.pro.swirlchat.entities.MessageModel
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
 import com.theleafapps.pro.swirlchat.util.AppUtil
+import io.ak1.pix.models.Options
 import org.json.JSONObject
 
 class MessageActivity : AppCompatActivity() {
@@ -165,7 +166,6 @@ class MessageActivity : AppCompatActivity() {
 
         val messageModel = MessageModel(myId, hisId!!, message, type = "text")
         databaseReference.push().setValue(messageModel)
-
 
     }
 
@@ -396,7 +396,7 @@ class MessageActivity : AppCompatActivity() {
 
     private fun pickImage() {
 
-        val options: Options = Options.init()
+        val options: Options = Options()
             .setRequestCode(100)
             .setCount(5)
             .setFrontfacing(true)
