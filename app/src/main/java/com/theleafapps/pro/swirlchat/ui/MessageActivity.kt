@@ -36,6 +36,7 @@ import com.theleafapps.pro.swirlchat.entities.ChatListModel
 import com.theleafapps.pro.swirlchat.entities.MessageModel
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
+import com.theleafapps.pro.swirlchat.services.SendMediaService
 import com.theleafapps.pro.swirlchat.util.AppUtil
 import io.ak1.pix.models.Options
 import org.json.JSONObject
