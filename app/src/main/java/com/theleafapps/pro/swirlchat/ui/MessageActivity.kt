@@ -23,11 +23,14 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.fxn.pix.Options
+import com.fxn.pix.Pix
+import com.fxn.utility.PermUtil
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.theleafapps.pro.swirlchat.R
+import com.theleafapps.pro.swirlchat.BR
 import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.theleafapps.pro.swirlchat.databinding.ActivityMessageBinding
 import com.theleafapps.pro.swirlchat.databinding.LeftItemLayoutBinding
@@ -38,7 +41,6 @@ import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
 import com.theleafapps.pro.swirlchat.services.SendMediaService
 import com.theleafapps.pro.swirlchat.util.AppUtil
-import io.ak1.pix.models.Options
 import org.json.JSONObject
 
 class MessageActivity : AppCompatActivity() {
@@ -50,7 +52,8 @@ class MessageActivity : AppCompatActivity() {
     private var myName: String? = null
     private lateinit var appUtil: AppUtil
     private lateinit var myId: String
-    private var firebaseRecyclerAdapter: FirebaseRecyclerAdapter<MessageModel, RecyclerView.ViewHolder>? = null
+    private var firebaseRecyclerAdapter: FirebaseRecyclerAdapter<MessageModel, RecyclerView.ViewHolder>? =
+        null
     private lateinit var myImage: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var appPermission: AppPermission
@@ -397,7 +400,7 @@ class MessageActivity : AppCompatActivity() {
 
     private fun pickImage() {
 
-        val options: Options = Options()
+        val options: Options = Options.init()
             .setRequestCode(100)
             .setCount(5)
             .setFrontfacing(true)
@@ -443,7 +446,6 @@ class MessageActivity : AppCompatActivity() {
     ) {
         when (requestCode) {
             PermUtil.REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS -> {
-
 
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     pickImage()

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -94,8 +95,6 @@ dependencies {
     // Volley
     implementation 'com.android.volley:volley:1.2.1'
 
-    // Image Picker
-    implementation  'io.ak1.pix:piximagepicker:1.6.3'
     // Image Picker
     implementation  'com.fxn769:pix:1.5.4'
 

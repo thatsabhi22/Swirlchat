@@ -19,16 +19,16 @@
         android:theme="@style/Theme.Swirlchat"
         tools:targetApi="q">
         <activity
-            android:name=".UserInfoActivity"
+            android:name=".ui.UserInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".MessageActivity"
+            android:name=".ui.MessageActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".ui.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".EditNameActivity"
+            android:name=".ui.EditNameActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
