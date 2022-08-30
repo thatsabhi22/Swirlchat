@@ -52,8 +52,8 @@ class MessageActivity : AppCompatActivity() {
     private var myName: String? = null
     private lateinit var appUtil: AppUtil
     private lateinit var myId: String
-    private var firebaseRecyclerAdapter: FirebaseRecyclerAdapter<MessageModel, RecyclerView.ViewHolder>? =
-        null
+    private var firebaseRecyclerAdapter:
+            FirebaseRecyclerAdapter<MessageModel,ViewHolder>? = null
     private lateinit var myImage: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var appPermission: AppPermission
@@ -216,7 +216,7 @@ class MessageActivity : AppCompatActivity() {
         query.keepSynced(true)
 
         firebaseRecyclerAdapter =
-            object : FirebaseRecyclerAdapter<MessageModel, ViewHolder>(firebaseRecyclerOptions) {
+            object : FirebaseRecyclerAdapter<MessageModel,ViewHolder>(firebaseRecyclerOptions) {
                 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
                     var viewDataBinding: ViewDataBinding? = null
