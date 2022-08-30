@@ -7,6 +7,7 @@ import android.os.Handler
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.installations.FirebaseInstallations
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.util.AppUtil
 
@@ -27,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
                 finish()
             } else {
 
-                FirebaseInstanceId.getInstance().instanceId
+                FirebaseInstallations.getInstance().getToken(false)
                     .addOnCompleteListener(OnCompleteListener {
                         if (it.isSuccessful) {
                             val token = it.result?.token
