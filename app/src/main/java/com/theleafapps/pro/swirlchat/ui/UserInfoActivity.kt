@@ -6,7 +6,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.ActivityUserInfoBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.util.AppUtil

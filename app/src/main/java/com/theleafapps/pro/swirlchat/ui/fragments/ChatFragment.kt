@@ -29,7 +29,7 @@ class ChatFragment : Fragment() {
     private lateinit var binding: FragmentChatBinding
     private lateinit var appUtil: AppUtil
     private lateinit var firebaseRecyclerAdapter:
-            FirebaseRecyclerAdapter<ChatListModel, RecyclerView.ViewHolder>
+            FirebaseRecyclerAdapter<ChatListModel,ViewHolder>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
