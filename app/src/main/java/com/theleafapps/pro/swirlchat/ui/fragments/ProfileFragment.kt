@@ -21,6 +21,7 @@ import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.constants.AppConstants
+import com.theleafapps.pro.swirlchat.databinding.DialogLayoutBinding
 import com.theleafapps.pro.swirlchat.databinding.FragmentProfileBinding
 import com.theleafapps.pro.swirlchat.permission.AppPermission
 import com.theleafapps.pro.swirlchat.viewmodels.ProfileViewModel
@@ -28,6 +29,7 @@ import com.theleafapps.pro.swirlchat.viewmodels.ProfileViewModel
 class ProfileFragment : Fragment() {
 
     private lateinit var profileBinding: FragmentProfileBinding
+    private lateinit var dialogLayoutBinding: DialogLayoutBinding
     private lateinit var profileViewModels: ProfileViewModel
     private lateinit var dialog: AlertDialog
     private lateinit var appPermission: AppPermission
@@ -58,11 +60,12 @@ class ProfileFragment : Fragment() {
     private fun getStatusDialog() {
 
         val alertDialog = AlertDialog.Builder(context)
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null, false)
-        alertDialog.setView(view)
+        dialogLayoutBinding = DialogLayoutBinding.inflate(LayoutInflater.from(requireContext()))
+        //val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null, false)
+        alertDialog.setView(dialogLayoutBinding.root)
 
-        view.btnEditStatus.setOnClickListener {
-            val status = view.edtUserStatus.text.toString()
+        dialogLayoutBinding.btnEditStatus.setOnClickListener {
+            val status = dialogLayoutBinding.edtUserStatus.text.toString()
             if (status.isNotEmpty()) {
                 profileViewModels.updateStatus(status)
                 dialog.dismiss()
