@@ -12,8 +12,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.FragmentGetUserNumberBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
@@ -24,7 +26,7 @@ class GetUserNumber : Fragment() {
     private var number: String? = null
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private var code: String? = null
-    private var firebaseAuth: FirebaseAuth? = null
+    private lateinit var firebaseAuth: FirebaseAuth
     private var databaseReference: DatabaseReference? = null
     private var binding: FragmentGetUserNumberBinding? = null
 
@@ -35,7 +37,7 @@ class GetUserNumber : Fragment() {
         val view = inflater.inflate(R.layout.fragment_get_user_number, container, false)
         binding = FragmentGetUserNumberBinding.inflate(inflater,container,false)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = Firebase.auth
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         binding?.btnGenerateOTP?.setOnClickListener {
             if (checkNumber()) {

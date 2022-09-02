@@ -5,25 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.installations.FirebaseInstallations
+import com.google.firebase.ktx.Firebase
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.util.AppUtil
 
 class SplashActivity : AppCompatActivity() {
 
-    private var firebaseAuth: FirebaseAuth? = null
+    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var appUtil: AppUtil
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        firebaseAuth = FirebaseAuth.getInstance()
+        FirebaseApp.initializeApp(this);
+
+        firebaseAuth = Firebase.auth
         appUtil = AppUtil()
 
         Handler().postDelayed({
 
-            if (firebaseAuth!!.currentUser == null) {
+            if (firebaseAuth.currentUser == null) {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {

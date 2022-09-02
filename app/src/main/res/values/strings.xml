@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Swirlchat</string>
     <string name="appName">SwirlChat</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generate_otp_text">Generate OTP</string>
     <string name="verify_number_image_cd">verify number_image</string>
