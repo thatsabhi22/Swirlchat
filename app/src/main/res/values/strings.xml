@@ -11,4 +11,8 @@
     <string name="user_status_edittext_text">Hey! I,m using this app</string>
     <string name="done_btn_text">Done</string>
     <string name="get_userdata_image_cd">get userdata image</string>
+    <string name="phone_number_edittext_hint">Number</string>
+    <string name="enter_your_number_for_verification_text">Enter your number for verification</string>
+    <string name="verify_your_number_text">Verify your number</string>
+    <string name="verify_number_screen_image_content_desc">Verify Number Screen Image</string>
 </resources>
