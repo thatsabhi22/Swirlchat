@@ -52,24 +52,23 @@ class GetUserData : Fragment() {
                 uploadData(username, status, image!!)
             }
         }
-
-        return view
+        return binding?.root
     }
 
     private fun checkData(): Boolean {
         username = binding?.edtUserName?.text.toString().trim()
         status = binding?.edtUserStatus?.text.toString().trim()
 
-        if (username.isEmpty()) {
+        return if (username.isEmpty()) {
             binding?.edtUserName?.error = "Filed is required"
-            return false
+            false
         } else if (status.isEmpty()) {
             binding?.edtUserStatus?.error = "Filed is required"
-            return false
+            false
         } else if (image == null) {
             Toast.makeText(context, "Image required", Toast.LENGTH_SHORT).show()
-            return false
-        } else return true
+            false
+        } else true
     }
 
     private fun uploadData(name: String, status: String, image: Uri) = kotlin.run {

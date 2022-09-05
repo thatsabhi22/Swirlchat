@@ -65,11 +65,14 @@ class GetUserNumber : Fragment() {
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                if (e is FirebaseAuthInvalidCredentialsException)
-                    Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
-                else if (e is FirebaseTooManyRequestsException)
-                    Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
-                else Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
+                when(e){
+                    is FirebaseAuthInvalidCredentialsException ->
+                        Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
+                    is FirebaseTooManyRequestsException ->
+                        Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
+                    else ->
+                        Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onCodeSent(

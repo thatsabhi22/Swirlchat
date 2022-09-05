@@ -17,14 +17,14 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_launcher_background"
-            app:civ_border_color="@color/colorAccent"
+            app:civ_border_color="@android:color/holo_red_light"
             app:civ_border_width="2dp" />
 
         <ImageView
             android:id="@+id/imgPickImage"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="170dp"
             android:contentDescription="@string/get_userdata_image_cd"
             android:src="@drawable/ic_camera"
             app:layout_anchor="@id/imgUser"
@@ -86,6 +86,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/colorPrimary"
+        android:padding="16dp"
         android:text="@string/done_btn_text"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
