@@ -80,7 +80,8 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/button_background"
         android:text="@string/verify_otp_text"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+        android:padding="16dp"
         android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>
