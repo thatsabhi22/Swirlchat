@@ -35,6 +35,9 @@
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.Swirlchat.NoActionBar" />
         <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Swirlchat.NoActionBar">

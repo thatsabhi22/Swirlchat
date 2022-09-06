@@ -52,6 +52,12 @@ class GetUserData : Fragment() {
                 uploadData(username, status, image!!)
             }
         }
+
+        binding?.imgPickImage?.setOnClickListener {
+            if (checkStoragePermission())
+                pickImage()
+            else storageRequestPermission()
+        }
         return binding?.root
     }
 
