@@ -66,13 +66,13 @@ class GetUserData : Fragment() {
         status = binding?.edtUserStatus?.text.toString().trim()
 
         return if (username.isEmpty()) {
-            binding?.edtUserName?.error = "Filed is required"
+            binding?.edtUserName?.error = "Please Enter the Username, it's required"
             false
         } else if (status.isEmpty()) {
-            binding?.edtUserStatus?.error = "Filed is required"
+            binding?.edtUserStatus?.error = "Please Enter the status, it's required"
             false
         } else if (image == null) {
-            Toast.makeText(context, "Image required", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Please add an profile picture, it's required", Toast.LENGTH_SHORT).show()
             false
         } else true
     }

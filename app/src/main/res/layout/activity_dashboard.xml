@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
+        android:padding="8dp"
+        app:cnb_iconSize="40dp"
         app:cnb_menuResource="@menu/nav_menu"
         app:cnb_unselectedColor="@color/colorAccent" />
 </RelativeLayout>
