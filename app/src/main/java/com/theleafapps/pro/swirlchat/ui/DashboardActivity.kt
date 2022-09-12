@@ -3,6 +3,7 @@ package com.theleafapps.pro.swirlchat.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.ActivityDashboardBinding
 import com.theleafapps.pro.swirlchat.ui.fragments.ChatFragment
@@ -27,24 +28,29 @@ class DashboardActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.dashboardContainer, ChatFragment()).commit()
             dashboardBinding?.bottomChip?.setItemSelected(R.id.btnChat)
+            dashboardBinding?.bottomChip?.setItemEnabled(R.id.btnChat,true)
         }
 
-        dashboardBinding?.bottomChip?.setOnItemSelectedListener { id ->
-            when (id) {
-                R.id.btnChat -> {
-                    fragment = ChatFragment()
+        dashboardBinding?.bottomChip?.setOnItemSelectedListener {
+            object : ChipNavigationBar.OnItemSelectedListener {
+                override fun onItemSelected(id: Int) {
+                    when (id) {
+                        R.id.btnChat -> {
+                            fragment = ChatFragment()
+                        }
+                        R.id.btnProfile -> {
+                            fragment = ProfileFragment();
+                        }
+                        R.id.btnContact -> {
+                            fragment = ContactFragment()
+                        }
+                    }
+                    fragment!!.let {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.dashboardContainer, fragment!!)
+                            .commit()
+                    }
                 }
-
-                R.id.btnProfile -> {
-                    fragment = ProfileFragment();
-                }
-                R.id.btnContact -> fragment = ContactFragment()
-            }
-
-            fragment!!.let {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.dashboardContainer, fragment!!)
-                    .commit()
             }
         }
     }
