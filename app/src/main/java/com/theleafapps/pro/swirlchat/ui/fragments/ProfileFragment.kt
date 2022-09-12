@@ -56,11 +56,11 @@ class ProfileFragment : Fragment() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
                 .create(ProfileViewModel::class.java)
 
-        profileViewModel.getUser().observe(viewLifecycleOwner, Observer {
-            profileBinding.userModel = it
+        profileViewModel.getUser().observe(viewLifecycleOwner, Observer { userModel ->
+            profileBinding.userModel = userModel
 
-            if (profileBinding.userModel.name.contains(" ")) {
-                val split = profileBinding.userModel.name.split(" ")
+            if (userModel.name.contains(" ")) {
+                val split = userModel.name.split(" ")
 
                 profileBinding.txtProfileFName.text = split[0]
                 profileBinding.txtProfileLName.text = split[1]
@@ -68,7 +68,7 @@ class ProfileFragment : Fragment() {
 
             profileBinding.cardName.setOnClickListener {
                 val intent = Intent(context, EditNameActivity::class.java)
-                intent.putExtra("name", profileBinding.userModel.name)
+                intent.putExtra("name", userModel.name)
                 startActivityForResult(intent, 100)
             }
         })
