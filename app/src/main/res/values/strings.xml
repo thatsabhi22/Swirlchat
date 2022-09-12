@@ -15,4 +15,7 @@
     <string name="enter_your_number_for_verification_text">Enter your number for verification</string>
     <string name="verify_your_number_text">Verify your number</string>
     <string name="verify_number_screen_image_content_desc">Verify Number Screen Image</string>
+    <string name="blank_user_name_err_msg">Please Enter a username, it\'s required</string>
+    <string name="blank_status_err_msg">Please Enter the status, it\'s required</string>
+    <string name="No_profile_image_err_msg">"Please add a profile picture, it's required"</string>
 </resources>
