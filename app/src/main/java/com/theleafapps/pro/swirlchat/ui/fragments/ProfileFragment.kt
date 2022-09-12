@@ -14,6 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -24,13 +26,14 @@ import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.theleafapps.pro.swirlchat.databinding.DialogLayoutBinding
 import com.theleafapps.pro.swirlchat.databinding.FragmentProfileBinding
 import com.theleafapps.pro.swirlchat.permission.AppPermission
+import com.theleafapps.pro.swirlchat.ui.EditNameActivity
 import com.theleafapps.pro.swirlchat.viewmodels.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
     private lateinit var profileBinding: FragmentProfileBinding
     private lateinit var dialogLayoutBinding: DialogLayoutBinding
-    private lateinit var profileViewModels: ProfileViewModel
+    private lateinit var profileViewModel: ProfileViewModel
     private lateinit var dialog: AlertDialog
     private lateinit var appPermission: AppPermission
     private lateinit var storageReference: StorageReference
@@ -48,6 +51,27 @@ class ProfileFragment : Fragment() {
         appPermission = AppPermission()
         firebaseAuth = FirebaseAuth.getInstance()
         sharedPreferences = requireContext().getSharedPreferences("userData", Context.MODE_PRIVATE)
+
+        profileViewModel =
+            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+                .create(ProfileViewModel::class.java)
+
+        profileViewModel.getUser().observe(viewLifecycleOwner, Observer {
+            profileBinding.userModel = it
+
+            if (profileBinding.userModel.name.contains(" ")) {
+                val split = profileBinding.userModel.name.split(" ")
+
+                profileBinding.txtProfileFName.text = split[0]
+                profileBinding.txtProfileLName.text = split[1]
+            }
+
+            profileBinding.cardName.setOnClickListener {
+                val intent = Intent(context, EditNameActivity::class.java)
+                intent.putExtra("name", profileBinding.userModel.name)
+                startActivityForResult(intent, 100)
+            }
+        })
 
         return profileBinding.root
     }
@@ -67,7 +91,7 @@ class ProfileFragment : Fragment() {
         dialogLayoutBinding.btnEditStatus.setOnClickListener {
             val status = dialogLayoutBinding.edtUserStatus.text.toString()
             if (status.isNotEmpty()) {
-                profileViewModels.updateStatus(status)
+                profileViewModel.updateStatus(status)
                 dialog.dismiss()
             }
         }
@@ -83,7 +107,7 @@ class ProfileFragment : Fragment() {
             100 -> {
                 if (data != null) {
                     val userName = data.getStringExtra("name")
-                    profileViewModels.updateName(userName!!)
+                    profileViewModel.updateName(userName!!)
                     val editor = sharedPreferences.edit()
                     editor.putString("myName", userName).apply()
                 }
@@ -129,7 +153,7 @@ class ProfileFragment : Fragment() {
                         val editor = sharedPreferences.edit()
                         editor.putString("myImage", imagePath).apply()
 
-                        profileViewModels.updateImage(imagePath)
+                        profileViewModel.updateImage(imagePath)
                     }
                 }
             }
