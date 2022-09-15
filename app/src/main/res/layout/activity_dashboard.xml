@@ -10,16 +10,13 @@
         android:id="@+id/dashboardContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomChip" />
+        android:layout_above="@+id/bottomNav" />
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
-        android:id="@+id/bottomChip"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
         android:padding="8dp"
-        app:cnb_iconSize="40dp"
-        app:cnb_menuResource="@menu/nav_menu"
-        app:cnb_unselectedColor="@color/colorAccent" />
+        app:menu="@menu/nav_menu" />
 </RelativeLayout>
