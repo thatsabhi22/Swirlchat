@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="userModel"
             type="com.theleafapps.pro.swirlchat.entities.UserModel" />
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fragments.ProfileFragment">
@@ -58,8 +58,9 @@
                     android:layout_weight=".3"
                     android:text="@{userModel.name , default=Nothing}"
                     android:textColor="@color/colorAccent"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="profile_name" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -74,8 +75,9 @@
                         android:layout_weight=".4"
                         android:text="@{userModel.status , default=Nothing}"
                         android:textColor="@color/colorAccent"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="profile_status" />
 
                     <ImageView
                         android:id="@+id/imgEditStatus"
@@ -84,7 +86,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/txtProfileStatus"
+                        android:layout_toEndOf="@+id/txtProfileStatus"
                         android:src="@drawable/ic_edit" />
 
                 </RelativeLayout>
@@ -110,9 +112,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
-                            android:text="Username"
+                            android:text="@string/profile_frag_username_label"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -126,24 +128,25 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:layout_weight="1"
-                                android:text="First Name"
+                                android:text="@string/profile_frag_firstname_label"
                                 android:textColor="@color/grey"
-                                android:textSize="15dp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Last Name"
+                                android:text="@string/profile_frag_lastname_label"
                                 android:textColor="@color/grey"
-                                android:textSize="15dp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/ic_next" />
+                                android:src="@drawable/ic_next"
+                                android:contentDescription="@string/profile_details_content_desc" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -158,9 +161,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight=".9"
-                                android:text="First Name"
+                                android:text="@string/profile_frag_firstname_label"
                                 android:textColor="@color/colorPrimary"
-                                android:textSize="15dp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -170,9 +173,9 @@
                                 android:layout_marginStart="20dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1.1"
-                                android:text="Last Name"
+                                android:text="@string/profile_frag_lastname_label"
                                 android:textColor="@color/colorPrimary"
-                                android:textSize="15dp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
@@ -192,9 +195,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
-                            android:text="Phone"
+                            android:text="@string/profile_frag_phone_label"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -204,7 +207,7 @@
                             android:layout_marginStart="10dp"
                             android:text="@{userModel.number , default=Nothing}"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -223,15 +226,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="8dp"
-                            android:text="Delete Account."
+                            android:text="@string/profile_frag_delete_account_label"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
         </LinearLayout>
-
     </RelativeLayout>
 </layout>
