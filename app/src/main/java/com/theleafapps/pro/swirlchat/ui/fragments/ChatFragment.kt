@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +36,10 @@ class ChatFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
+        if(!actionBar.isShowing)
+            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+
         binding = FragmentChatBinding.inflate(layoutInflater, container, false)
         appUtil = AppUtil()
         readChat()

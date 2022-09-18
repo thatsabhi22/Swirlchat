@@ -24,7 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".8"
-                android:background="@color/colorPrimary"
+                android:padding="32dp"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:weightSum="2">
 
@@ -46,8 +47,8 @@
                         android:layout_height="30dp"
                         android:src="@drawable/ic_camera"
                         app:layout_anchor="@id/imgProfile"
-                        app:layout_anchorGravity="end|center"
-                        app:tint="@color/colorAccent" />
+                        app:layout_anchorGravity="end|bottom"
+                        app:tint="@color/green" />
                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
                 <TextView
@@ -57,7 +58,7 @@
                     android:layout_gravity="center"
                     android:layout_weight=".3"
                     android:text="@{userModel.name , default=Nothing}"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@android:color/holo_red_light"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="profile_name" />
@@ -65,6 +66,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight=".3">
 
                     <TextView
@@ -74,9 +76,8 @@
                         android:layout_centerInParent="true"
                         android:layout_weight=".4"
                         android:text="@{userModel.status , default=Nothing}"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@android:color/holo_red_light"
                         android:textSize="20sp"
-                        android:textStyle="bold"
                         tools:text="profile_status" />
 
                     <ImageView
@@ -94,6 +95,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
                 android:layout_height="0dp"
                 android:layout_weight="1.2"
                 android:orientation="vertical">
@@ -101,11 +103,12 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardName"
                     android:layout_width="match_parent"
-                    android:layout_height="103dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -162,7 +165,7 @@
                                 android:layout_marginStart="5dp"
                                 android:layout_weight=".9"
                                 android:text="@string/profile_frag_firstname_label"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@android:color/holo_red_light"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -174,7 +177,7 @@
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1.1"
                                 android:text="@string/profile_frag_lastname_label"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@android:color/holo_red_light"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -183,11 +186,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:layout_marginVertical="10dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:padding="16dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
@@ -206,7 +209,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="@{userModel.number , default=Nothing}"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/holo_red_light"
                             android:textSize="15sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -215,10 +218,11 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/deleteCard"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:padding="16dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
@@ -227,7 +231,7 @@
                             android:layout_height="wrap_content"
                             android:padding="8dp"
                             android:text="@string/profile_frag_delete_account_label"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@android:color/holo_red_light"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>

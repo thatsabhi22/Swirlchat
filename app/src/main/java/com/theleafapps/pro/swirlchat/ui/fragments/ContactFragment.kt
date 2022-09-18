@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +34,10 @@ class ContactFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
+        if(!actionBar.isShowing)
+            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+
         fragmentContactBinding = FragmentContactBinding.inflate(inflater, container, false)
         appPermission = AppPermission()
         firebaseAuth = FirebaseAuth.getInstance()
