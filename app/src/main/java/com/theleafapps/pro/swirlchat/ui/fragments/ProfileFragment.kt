@@ -70,7 +70,7 @@ class ProfileFragment : Fragment() {
                 profileBinding.txtProfileLName.text = split[1]
             }
 
-            profileBinding.cardName.setOnClickListener {
+            profileBinding.editName.setOnClickListener {
                 val intent = Intent(context, EditNameActivity::class.java)
                 intent.putExtra("name", userModel.name)
                 startActivityForResult(intent, 100)
