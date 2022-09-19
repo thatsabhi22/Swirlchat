@@ -77,6 +77,10 @@ class ProfileFragment : Fragment() {
             }
         })
 
+        profileBinding.imgEditStatus.setOnClickListener {
+            getStatusDialog()
+        }
+
         return profileBinding.root
     }
 
@@ -89,7 +93,6 @@ class ProfileFragment : Fragment() {
 
         val alertDialog = AlertDialog.Builder(context)
         dialogLayoutBinding = DialogLayoutBinding.inflate(LayoutInflater.from(requireContext()))
-        //val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null, false)
         alertDialog.setView(dialogLayoutBinding.root)
 
         dialogLayoutBinding.btnEditStatus.setOnClickListener {
