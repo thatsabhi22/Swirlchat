@@ -12,7 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Fragment.ProfileFragment">
+        tools:context=".ui.UserInfoActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,8 +24,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight=".8"
-                android:background="@color/colorPrimary"
+                android:background="@color/white"
                 android:orientation="vertical"
+                android:padding="32dp"
                 android:weightSum="2">
 
                 <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -40,7 +41,14 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center" />
 
-
+                    <ImageView
+                        android:id="@+id/imgPickImage"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_camera"
+                        app:layout_anchor="@id/imgProfile"
+                        app:layout_anchorGravity="end|bottom"
+                        app:tint="@color/green" />
                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
                 <TextView
@@ -50,13 +58,15 @@
                     android:layout_gravity="center"
                     android:layout_weight=".3"
                     android:text="@{userModel.name , default=Nothing}"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="profile_name" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
                     android:layout_weight=".3">
 
                     <TextView
@@ -66,11 +76,20 @@
                         android:layout_centerInParent="true"
                         android:layout_weight=".4"
                         android:text="@{userModel.status , default=Nothing}"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="20sp"
+                        tools:text="profile_status" />
 
-
+                    <ImageView
+                        android:id="@+id/imgEditStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/txtProfileStatus"
+                        android:src="@drawable/ic_edit"
+                        app:tint="@color/black" />
 
                 </RelativeLayout>
             </LinearLayout>
