@@ -36,7 +36,7 @@ class ContactFragment : Fragment() {
     ): View? {
         val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
         if(!actionBar.isShowing)
-            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+            (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         fragmentContactBinding = FragmentContactBinding.inflate(inflater, container, false)
         appPermission = AppPermission()
@@ -133,7 +133,5 @@ class ContactFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         })
-
     }
-
 }

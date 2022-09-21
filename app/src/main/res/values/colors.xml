@@ -6,7 +6,7 @@
     <color name="white">#ffffff</color>
     <color name="green">#4CAF50</color>
     <color name="transparent">#00000000</color>
-    <color name="edittextColor">#DDDDDD</color>
+    <color name="edittextColor">#00000000</color>
     <color name="grey">#AAAAAA</color>
 
     <color name="purple_200">#FFBB86FC</color>
