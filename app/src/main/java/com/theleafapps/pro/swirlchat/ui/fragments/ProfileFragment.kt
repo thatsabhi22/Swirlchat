@@ -46,7 +46,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
-        if(actionBar.isShowing)
+        if (actionBar.isShowing)
             (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         profileBinding =
@@ -77,6 +77,12 @@ class ProfileFragment : Fragment() {
             }
         })
 
+        profileBinding.imgPickImage.setOnClickListener {
+            if (appPermission.isStorageOk(requireContext())) {
+                pickImage()
+            } else appPermission.requestStoragePermission(requireActivity())
+        }
+
         profileBinding.imgEditStatus.setOnClickListener {
             getStatusDialog()
         }
@@ -104,8 +110,6 @@ class ProfileFragment : Fragment() {
         }
         dialog = alertDialog.create()
         dialog.show()
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
