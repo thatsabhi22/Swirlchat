@@ -8,13 +8,12 @@ import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
@@ -45,9 +44,6 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
-        if (actionBar.isShowing)
-            (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         profileBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false)

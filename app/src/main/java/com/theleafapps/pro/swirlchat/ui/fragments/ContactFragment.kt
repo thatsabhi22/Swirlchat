@@ -2,19 +2,17 @@ package com.theleafapps.pro.swirlchat.ui.fragments
 
 import android.os.Bundle
 import android.provider.ContactsContract
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.adapters.ContactAdapter
 import com.theleafapps.pro.swirlchat.databinding.FragmentContactBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
@@ -34,9 +32,6 @@ class ContactFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
-        if(!actionBar.isShowing)
-            (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         fragmentContactBinding = FragmentContactBinding.inflate(inflater, container, false)
         appPermission = AppPermission()

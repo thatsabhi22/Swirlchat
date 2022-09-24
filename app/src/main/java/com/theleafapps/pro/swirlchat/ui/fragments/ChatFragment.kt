@@ -2,12 +2,11 @@ package com.theleafapps.pro.swirlchat.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
@@ -30,15 +29,12 @@ class ChatFragment : Fragment() {
     private lateinit var binding: FragmentChatBinding
     private lateinit var appUtil: AppUtil
     private lateinit var firebaseRecyclerAdapter:
-            FirebaseRecyclerAdapter<ChatListModel,ViewHolder>
+            FirebaseRecyclerAdapter<ChatListModel, ViewHolder>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar!!
-        if(!actionBar.isShowing)
-            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
 
         binding = FragmentChatBinding.inflate(layoutInflater, container, false)
         appUtil = AppUtil()
