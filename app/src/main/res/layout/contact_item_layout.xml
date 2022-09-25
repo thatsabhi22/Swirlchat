@@ -29,10 +29,11 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:layout_marginStart="16dp"
                 android:elevation="10dp"
+                android:src="@drawable/ic_launcher_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +65,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgContactUserInfo"
                 app:layout_constraintTop_toBottomOf="@+id/txtContactName" />
-
 
             <ImageView
                 android:id="@+id/imgContact"
