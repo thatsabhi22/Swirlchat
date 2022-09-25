@@ -25,4 +25,5 @@
     <string name="profile_frag_phone_label">Phone</string>
     <string name="profile_frag_delete_account_label">Delete Account</string>
     <string name="user_info_cd">User Info cd</string>
+    <string name="imageviewcd">imageViewCD</string>
 </resources>
