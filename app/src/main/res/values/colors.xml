@@ -15,6 +15,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    <item name="cardBackground" type="color">#f6f6f6</item>
+    <item name="cardBackground" type="color">#d9ead3</item>
     <color name="textColor">#999DA4</color>
 </resources>
