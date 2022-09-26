@@ -18,5 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:padding="8dp"
+        android:background="@color/brown"
         app:menu="@menu/nav_menu" />
 </RelativeLayout>
