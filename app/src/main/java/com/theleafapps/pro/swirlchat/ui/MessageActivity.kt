@@ -41,6 +41,7 @@ import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
 import com.theleafapps.pro.swirlchat.services.SendMediaService
 import com.theleafapps.pro.swirlchat.util.AppUtil
+import com.theleafapps.pro.swirlchat.util.WrapContentLinearLayoutManager
 import org.json.JSONObject
 
 class MessageActivity : AppCompatActivity() {
@@ -267,7 +268,7 @@ class MessageActivity : AppCompatActivity() {
                 }
             }
 
-        activityMessageBinding.messageRecyclerView.layoutManager = LinearLayoutManager(this)
+        activityMessageBinding.messageRecyclerView.layoutManager = WrapContentLinearLayoutManager(this)
         activityMessageBinding.messageRecyclerView.adapter = firebaseRecyclerAdapter
         firebaseRecyclerAdapter!!.startListening()
 
