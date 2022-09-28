@@ -20,7 +20,7 @@
         android:id="@+id/msgToolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/colorPrimary">
+        android:background="@color/toolbar_chat">
 
         <RelativeLayout
             android:layout_width="match_parent"
