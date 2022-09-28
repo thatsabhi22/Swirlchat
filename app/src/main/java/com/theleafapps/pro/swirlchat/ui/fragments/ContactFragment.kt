@@ -17,6 +17,7 @@ import com.theleafapps.pro.swirlchat.adapters.ContactAdapter
 import com.theleafapps.pro.swirlchat.databinding.FragmentContactBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.permission.AppPermission
+import com.theleafapps.pro.swirlchat.util.WrapContentLinearLayoutManager
 
 class ContactFragment : Fragment() {
 
@@ -116,7 +117,7 @@ class ContactFragment : Fragment() {
                     }
 
                     fragmentContactBinding.recyclerViewContact.apply {
-                        layoutManager = LinearLayoutManager(context)
+                        layoutManager = WrapContentLinearLayoutManager(context)
                         setHasFixedSize(true)
                         contactAdapter = ContactAdapter(appContacts)
                         adapter = contactAdapter

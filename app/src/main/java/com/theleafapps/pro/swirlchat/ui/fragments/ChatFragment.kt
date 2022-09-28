@@ -23,6 +23,7 @@ import com.theleafapps.pro.swirlchat.entities.ChatModel
 import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.ui.MessageActivity
 import com.theleafapps.pro.swirlchat.util.AppUtil
+import com.theleafapps.pro.swirlchat.util.WrapContentLinearLayoutManager
 
 class ChatFragment : Fragment() {
 
@@ -103,7 +104,7 @@ class ChatFragment : Fragment() {
                 }
             }
 
-        binding.recyclerViewChat.layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewChat.layoutManager = WrapContentLinearLayoutManager(context)
         binding.recyclerViewChat.setHasFixedSize(false)
         binding.recyclerViewChat.adapter = firebaseRecyclerAdapter
     }
