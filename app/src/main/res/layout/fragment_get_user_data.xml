@@ -57,8 +57,8 @@
                 android:hint="@string/username_edittext_hint"
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
                 android:inputType="text|textCapSentences"
                 android:padding="10dp"
                 android:text="@string/user_status_edittext_text"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -88,7 +88,7 @@
         android:backgroundTint="@color/colorPrimary"
         android:padding="16dp"
         android:text="@string/done_btn_text"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>
