@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -37,7 +36,7 @@ class ContactFragment : Fragment() {
         fragmentContactBinding = FragmentContactBinding.inflate(inflater, container, false)
         appPermission = AppPermission()
         firebaseAuth = FirebaseAuth.getInstance()
-        phoneNumber = firebaseAuth.currentUser?.displayName!!
+        phoneNumber = firebaseAuth.currentUser?.phoneNumber!!
 
         if (appPermission.isContactOk(requireContext())) {
             getMobileContact()
@@ -79,14 +78,14 @@ class ContactFragment : Fragment() {
             while (cursor.moveToNext()) {
 
                 val name =
-                    cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                    cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
                 var number =
-                    cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+                    cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER))
 
                 number = number.replace("\\s".toRegex(), "")
                 val num = number.elementAt(0).toString()
                 if (num == "0")
-                    number = number.replaceFirst("(?:0)+".toRegex(), "+92")
+                    number = number.replaceFirst("(?:0)+".toRegex(), "+91")
                 val userModel = UserModel()
                 userModel.name = name
                 userModel.number = number
