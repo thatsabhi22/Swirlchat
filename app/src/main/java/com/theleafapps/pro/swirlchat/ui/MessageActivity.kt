@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,8 +13,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Response
@@ -54,7 +53,7 @@ class MessageActivity : AppCompatActivity() {
     private lateinit var appUtil: AppUtil
     private lateinit var myId: String
     private var firebaseRecyclerAdapter:
-            FirebaseRecyclerAdapter<MessageModel,ViewHolder>? = null
+            FirebaseRecyclerAdapter<MessageModel, ViewHolder>? = null
     private lateinit var myImage: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var appPermission: AppPermission
@@ -217,7 +216,7 @@ class MessageActivity : AppCompatActivity() {
         query.keepSynced(true)
 
         firebaseRecyclerAdapter =
-            object : FirebaseRecyclerAdapter<MessageModel,ViewHolder>(firebaseRecyclerOptions) {
+            object : FirebaseRecyclerAdapter<MessageModel, ViewHolder>(firebaseRecyclerOptions) {
                 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
                     var viewDataBinding: ViewDataBinding? = null
@@ -268,7 +267,8 @@ class MessageActivity : AppCompatActivity() {
                 }
             }
 
-        activityMessageBinding.messageRecyclerView.layoutManager = WrapContentLinearLayoutManager(this)
+        activityMessageBinding.messageRecyclerView.layoutManager =
+            WrapContentLinearLayoutManager(this)
         activityMessageBinding.messageRecyclerView.adapter = firebaseRecyclerAdapter
         firebaseRecyclerAdapter!!.startListening()
 

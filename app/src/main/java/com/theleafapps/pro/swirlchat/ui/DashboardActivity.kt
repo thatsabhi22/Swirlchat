@@ -1,7 +1,7 @@
 package com.theleafapps.pro.swirlchat.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.ActivityDashboardBinding
