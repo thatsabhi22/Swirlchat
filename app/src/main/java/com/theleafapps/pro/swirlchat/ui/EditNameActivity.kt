@@ -1,10 +1,9 @@
 package com.theleafapps.pro.swirlchat.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.theleafapps.pro.swirlchat.R
+import androidx.appcompat.app.AppCompatActivity
 import com.theleafapps.pro.swirlchat.databinding.ActivityEditNameBinding
 import com.theleafapps.pro.swirlchat.util.AppUtil
 

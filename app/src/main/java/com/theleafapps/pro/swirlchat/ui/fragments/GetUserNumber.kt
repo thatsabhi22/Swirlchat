@@ -1,11 +1,11 @@
 package com.theleafapps.pro.swirlchat.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
@@ -32,7 +32,7 @@ class GetUserNumber : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_get_user_number, container, false)
-        binding = FragmentGetUserNumberBinding.inflate(inflater,container,false)
+        binding = FragmentGetUserNumberBinding.inflate(inflater, container, false)
 
         firebaseAuth = Firebase.auth
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
@@ -65,7 +65,7 @@ class GetUserNumber : Fragment() {
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                when(e){
+                when (e) {
                     is FirebaseAuthInvalidCredentialsException ->
                         Toast.makeText(context, "" + e.message, Toast.LENGTH_SHORT).show()
                     is FirebaseTooManyRequestsException ->

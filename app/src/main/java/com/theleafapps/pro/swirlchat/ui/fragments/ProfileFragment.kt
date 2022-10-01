@@ -41,8 +41,7 @@ class ProfileFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         profileBinding =
@@ -132,16 +131,13 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             AppConstants.STORAGE_PERMISSION -> {
 
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    pickImage()
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) pickImage()
                 else Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show()
             }
         }

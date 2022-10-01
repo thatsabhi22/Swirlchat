@@ -29,8 +29,7 @@ class ContactFragment : Fragment() {
     private lateinit var phoneNumber: String
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         fragmentContactBinding = FragmentContactBinding.inflate(inflater, container, false)
@@ -49,8 +48,7 @@ class ContactFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (contactAdapter != null)
-                    contactAdapter!!.filter.filter(newText)
+                if (contactAdapter != null) contactAdapter!!.filter.filter(newText)
                 return false
             }
         })
@@ -60,17 +58,12 @@ class ContactFragment : Fragment() {
     private fun getMobileContact() {
 
         val projection = arrayOf(
-            ContactsContract.Data.DISPLAY_NAME,
-            ContactsContract.CommonDataKinds.Phone.NUMBER
+            ContactsContract.Data.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER
         )
 
         val contentResolver = requireContext().contentResolver
         val cursor = contentResolver.query(
-            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-            projection,
-            null,
-            null,
-            null
+            ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projection, null, null, null
         )
 
         if (cursor != null) {
@@ -84,8 +77,7 @@ class ContactFragment : Fragment() {
 
                 number = number.replace("\\s".toRegex(), "")
                 val num = number.elementAt(0).toString()
-                if (num == "0")
-                    number = number.replaceFirst("(?:0)+".toRegex(), "+91")
+                if (num == "0") number = number.replaceFirst("(?:0)+".toRegex(), "+91")
                 val userModel = UserModel()
                 userModel.name = name
                 userModel.number = number

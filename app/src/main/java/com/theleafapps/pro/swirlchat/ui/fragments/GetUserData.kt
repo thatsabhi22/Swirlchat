@@ -6,13 +6,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -72,8 +72,10 @@ class GetUserData : Fragment() {
             binding?.edtUserStatus?.error = getString(R.string.blank_status_err_msg)
             false
         } else if (image == null) {
-            Toast.makeText(context,
-                getString(R.string.No_profile_image_err_msg), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                getString(R.string.No_profile_image_err_msg), Toast.LENGTH_SHORT
+            ).show()
             false
         } else true
     }
