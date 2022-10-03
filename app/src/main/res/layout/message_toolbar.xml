@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="activity"
             type="com.theleafapps.pro.swirlchat.ui.MessageActivity" />
-
         <variable
             name="hisImage"
             type="String" />
-
         <variable
             name="online"
             type="String" />
     </data>
 
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/msgToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/toolbar_chat">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -30,17 +28,26 @@
                 android:id="@+id/msgBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:onClick="@{()->activity.onBackPressed()}"
                 android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/colorAccent" />
 
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinatorLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:layout_constraintBottom_toBottomOf="@+id/msgBack"
+                app:layout_constraintStart_toEndOf="@+id/msgBack"
+                app:layout_constraintTop_toTopOf="@+id/msgBack">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/msgImage"
@@ -60,20 +67,20 @@
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
             <ImageView
                 android:id="@+id/msgInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
                 android:onClick="@{()->activity.userInfo()}"
                 android:src="@drawable/ic_info"
+                app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/coordinatorLayout"
                 app:tint="@color/colorAccent" />
 
-        </RelativeLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
-
 </layout>
