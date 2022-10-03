@@ -10,6 +10,7 @@
     <color name="grey">#AAAAAA</color>
     <color name="brown">#795548</color>
     <color name="toolbar_chat">#616161</color>
+    <color name="dark_grey">#546E7A</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
