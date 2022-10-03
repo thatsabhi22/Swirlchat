@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="activity"
             type="com.theleafapps.pro.swirlchat.ui.MessageActivity" />
-
         <variable
             name="hisImage"
             type="String" />
-
         <variable
             name="online"
             type="String" />
-
     </data>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MessageActivity">
@@ -28,77 +25,94 @@
             layout="@layout/message_toolbar"
             bind:activity="@{activity}"
             bind:hisImage="@{hisImage}"
+            bind:layout_constraintBottom_toTopOf="@+id/messageRecyclerView"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent"
+            bind:layout_constraintVertical_chainStyle="spread"
             bind:online="@{online}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/messageRecyclerView"
-            android:background="@color/cardBackground"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/lottieAnimation"
-            android:layout_below="@+id/messageToolbar" />
+            android:layout_height="0dp"
+            android:layout_below="@+id/messageToolbar"
+            android:background="@color/cardBackground"
+            bind:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintHorizontal_bias="0.5"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/messageToolbar" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimation"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_above="@+id/msgData"
-            android:layout_marginStart="5dp"
-            android:visibility="invisible"
-            bind:lottie_autoPlay="true"
-            bind:lottie_loop="true"
-            bind:lottie_rawRes="@raw/typing_animation"
-            bind:lottie_repeatCount="20" />
-
-        <LinearLayout
-
-            android:id="@+id/msgData"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:visibility="visible"
-            android:weightSum="2">
+            android:padding="8dp"
+            bind:layout_constraintBottom_toBottomOf="parent"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintHorizontal_bias="0.5"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/messageRecyclerView">
 
-            <LinearLayout
-                android:id="@+id/messageLayout"
+            <ImageView
+                android:id="@+id/btnDataSend"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:contentDescription="@string/add_attachment_cd"
+                android:src="@drawable/ic_file"
+                bind:layout_constraintBottom_toBottomOf="parent"
+                bind:layout_constraintEnd_toStartOf="@+id/msgText"
+                bind:layout_constraintHorizontal_bias="0.5"
+                bind:layout_constraintHorizontal_chainStyle="spread_inside"
+                bind:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/msgText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.8"
-                android:orientation="horizontal"
-                android:visibility="visible">
+                android:layout_marginStart="8dp"
+                android:background="@drawable/message_edittext_background"
+                android:hint="@string/write_message_hint"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:scrollbars="vertical"
+                android:text=""
+                bind:layout_constraintBottom_toBottomOf="@+id/btnDataSend"
+                bind:layout_constraintEnd_toStartOf="@+id/lottieAnimation"
+                bind:layout_constraintHorizontal_bias="0.5"
+                bind:layout_constraintStart_toEndOf="@+id/btnDataSend"
+                bind:layout_constraintTop_toTopOf="@+id/btnDataSend" />
 
-                <ImageView
-                    android:id="@+id/btnDataSend"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_gravity="center|bottom"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/ic_file" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimation"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="invisible"
+                bind:layout_constraintBottom_toBottomOf="@+id/msgText"
+                bind:layout_constraintEnd_toStartOf="@+id/btnSend"
+                bind:layout_constraintHorizontal_bias="0.5"
+                bind:layout_constraintStart_toEndOf="@+id/msgText"
+                bind:layout_constraintTop_toTopOf="@+id/msgText"
+                bind:lottie_autoPlay="true"
+                bind:lottie_loop="true"
+                bind:lottie_rawRes="@raw/typing_animation"
+                bind:lottie_repeatCount="20" />
 
-                <EditText
-                    android:id="@+id/msgText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/message_edittext_background"
-                    android:hint="Write message.."
-                    android:inputType="textMultiLine"
-                    android:padding="8dp"
-                    android:scrollbars="vertical"
-                    android:text="" />
-            </LinearLayout>
             <ImageView
                 android:id="@+id/btnSend"
-                android:layout_width="0dp"
+                android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center|bottom"
-                android:layout_marginEnd="5dp"
-                android:layout_weight=".2"
-                android:src="@drawable/ic_send" />
-        </LinearLayout>
+                android:contentDescription="@string/button_send_cd"
+                android:src="@drawable/ic_send"
+                bind:layout_constraintBottom_toBottomOf="@+id/msgText"
+                bind:layout_constraintEnd_toEndOf="parent"
+                bind:layout_constraintHorizontal_bias="0.5"
+                bind:layout_constraintStart_toEndOf="@+id/lottieAnimation"
+                bind:layout_constraintTop_toTopOf="@+id/msgText" />
 
-    </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -26,4 +26,7 @@
     <string name="profile_frag_delete_account_label">Delete Account</string>
     <string name="user_info_cd">User Info cd</string>
     <string name="imageviewcd">imageViewCD</string>
+    <string name="button_send_cd">Button Send</string>
+    <string name="write_message_hint">Write message..</string>
+    <string name="add_attachment_cd">Add Attachment</string>
 </resources>
