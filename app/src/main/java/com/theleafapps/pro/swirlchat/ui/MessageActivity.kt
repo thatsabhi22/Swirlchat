@@ -93,9 +93,12 @@ class MessageActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter Message", Toast.LENGTH_SHORT).show()
             else {
                 sendMessage(message)
-
                 getToken(message)
-
+                activityMessageBinding.msgText.setText("")
+                activityMessageBinding.messageRecyclerView.postDelayed({
+                    activityMessageBinding.messageRecyclerView
+                        .scrollToPosition(activityMessageBinding.messageRecyclerView.adapter?.itemCount!! - 1)
+                }, 1000)
             }
         }
 
