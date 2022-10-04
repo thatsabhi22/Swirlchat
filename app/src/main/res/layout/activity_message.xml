@@ -13,6 +13,9 @@
         <variable
             name="online"
             type="String" />
+        <variable
+            name="hisName"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,6 +28,7 @@
             layout="@layout/message_toolbar"
             bind:activity="@{activity}"
             bind:hisImage="@{hisImage}"
+            bind:hisName="@{hisName}"
             bind:layout_constraintBottom_toTopOf="@+id/messageRecyclerView"
             bind:layout_constraintEnd_toEndOf="parent"
             bind:layout_constraintStart_toStartOf="parent"
