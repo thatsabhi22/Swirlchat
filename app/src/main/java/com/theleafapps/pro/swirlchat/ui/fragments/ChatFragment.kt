@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
@@ -91,6 +90,7 @@ class ChatFragment : Fragment() {
                                     intent.putExtra("hisId", userModel?.uid)
                                     intent.putExtra("hisImage", userModel?.image)
                                     intent.putExtra("chatId", chatListModel.chatId)
+                                    intent.putExtra("hisName", userModel?.name)
                                     startActivity(intent)
                                 }
 

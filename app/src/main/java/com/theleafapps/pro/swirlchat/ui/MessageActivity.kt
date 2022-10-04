@@ -48,6 +48,7 @@ class MessageActivity : AppCompatActivity() {
     private lateinit var activityMessageBinding: ActivityMessageBinding
     private var hisId: String? = null
     private var hisImage: String? = null
+    private var hisName: String? = null
     private var chatId: String? = null
     private var myName: String? = null
     private lateinit var appUtil: AppUtil
@@ -77,11 +78,13 @@ class MessageActivity : AppCompatActivity() {
             chatId = intent.getStringExtra("chatId")
             hisId = intent.getStringExtra("hisId")
             hisImage = intent.getStringExtra("hisImage")
+            hisName = intent.getStringExtra("hisName")
             readMessages(chatId!!)
 
         } else {
             hisId = intent.getStringExtra("hisId")
             hisImage = intent.getStringExtra("hisImage")
+            hisName = intent.getStringExtra("hisName")
         }
 
         activityMessageBinding.btnSend.setOnClickListener {
@@ -329,7 +332,6 @@ class MessageActivity : AppCompatActivity() {
         val map = HashMap<String, Any>()
         map["typing"] = typing
         databaseReference.updateChildren(map)
-
     }
 
     private fun getToken(message: String) {
@@ -351,8 +353,6 @@ class MessageActivity : AppCompatActivity() {
                     to.put("to", token)
                     to.put("data", data)
                     sendNotification(to)
-
-
                 }
             }
 
@@ -462,5 +462,4 @@ class MessageActivity : AppCompatActivity() {
             }
         }
     }
-
 }

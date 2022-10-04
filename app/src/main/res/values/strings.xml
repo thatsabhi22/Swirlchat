@@ -29,4 +29,6 @@
     <string name="button_send_cd">Button Send</string>
     <string name="write_message_hint">Write message..</string>
     <string name="add_attachment_cd">Add Attachment</string>
+    <string name="back_to_contacts_cd">Back to Contacts</string>
+    <string name="user_details_cd">User Details</string>
 </resources>
