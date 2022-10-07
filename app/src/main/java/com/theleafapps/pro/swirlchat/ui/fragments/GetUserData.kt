@@ -2,7 +2,9 @@ package com.theleafapps.pro.swirlchat.ui.fragments
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -35,6 +37,7 @@ class GetUserData : Fragment() {
     private var firebaseAuth: FirebaseAuth? = null
     private var storageReference: StorageReference? = null
     private var binding: FragmentGetUserDataBinding? = null
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +49,7 @@ class GetUserData : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         storageReference = FirebaseStorage.getInstance().reference
+        sharedPreferences = requireContext().getSharedPreferences("userData", Context.MODE_PRIVATE)
 
         binding?.btnDataDone?.setOnClickListener {
             if (checkData()) {
@@ -137,6 +141,8 @@ class GetUserData : Fragment() {
                 if (resultCode == Activity.RESULT_OK) {
                     image = result.uri
                     binding?.imgUser?.setImageURI(image)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("myImage", image.toString()).apply()
                 }
             }
         }
