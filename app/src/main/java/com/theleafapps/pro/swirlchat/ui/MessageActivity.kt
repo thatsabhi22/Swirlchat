@@ -20,6 +20,7 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.fxn.pix.Options
@@ -86,6 +87,9 @@ class MessageActivity : AppCompatActivity() {
             hisImage = intent.getStringExtra("hisImage")
             hisName = intent.getStringExtra("hisName")
         }
+
+        Glide.with(this).load(hisImage).into(activityMessageBinding.messageToolbar.msgImage)
+        activityMessageBinding.messageToolbar.toUserName.text = hisName
 
         activityMessageBinding.btnSend.setOnClickListener {
             val message = activityMessageBinding.msgText.text.toString()
@@ -324,7 +328,6 @@ class MessageActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
     }
