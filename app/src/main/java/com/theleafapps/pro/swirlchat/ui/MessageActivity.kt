@@ -90,6 +90,7 @@ class MessageActivity : AppCompatActivity() {
 
         Glide.with(this).load(hisImage).into(activityMessageBinding.messageToolbar.msgImage)
         activityMessageBinding.messageToolbar.toUserName.text = hisName
+        //@{online.equals(`online`)? @drawable/ic_online:@drawable/ic_offline}
 
         activityMessageBinding.btnSend.setOnClickListener {
             val message = activityMessageBinding.msgText.text.toString()
@@ -312,7 +313,8 @@ class MessageActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     val userModel = snapshot.getValue(UserModel::class.java)
-                    activityMessageBinding.online = userModel?.online
+                    //activityMessageBinding.online = userModel?.online
+                    activityMessageBinding.messageToolbar.online = userModel?.online
 
                     val typing = userModel?.typing
 
@@ -322,7 +324,6 @@ class MessageActivity : AppCompatActivity() {
                     } else {
                         activityMessageBinding.lottieAnimation.cancelAnimation()
                         activityMessageBinding.lottieAnimation.visibility = View.GONE
-
                     }
                 }
             }
@@ -333,7 +334,6 @@ class MessageActivity : AppCompatActivity() {
     }
 
     private fun typingStatus(typing: String) {
-
         val databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(myId)
         val map = HashMap<String, Any>()
         map["typing"] = typing

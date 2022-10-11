@@ -7,6 +7,9 @@
         <variable
             name="activity"
             type="com.theleafapps.pro.swirlchat.ui.MessageActivity" />
+        <variable
+            name="online"
+            type="String" />
     </data>
 
     <androidx.appcompat.widget.Toolbar
@@ -56,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_anchor="@id/msgImage"
-                    app:layout_anchorGravity="end|center" />
+                    app:layout_anchorGravity="end|bottom" />
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
