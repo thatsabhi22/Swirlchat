@@ -58,6 +58,8 @@
                     android:id="@+id/msgOnlineStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/message_online_status_cd"
+                    android:src="@{online.equals(`online`)? @drawable/ic_online:@drawable/ic_offline}"
                     app:layout_anchor="@id/msgImage"
                     app:layout_anchorGravity="end|bottom" />
 

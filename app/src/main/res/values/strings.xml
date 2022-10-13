@@ -31,4 +31,5 @@
     <string name="add_attachment_cd">Add Attachment</string>
     <string name="back_to_contacts_cd">Back to Contacts</string>
     <string name="user_details_cd">User Details</string>
+    <string name="message_online_status_cd">message online status cd</string>
 </resources>
