@@ -43,10 +43,9 @@
                 android:layout_height="wrap_content"
                 android:src="@{chatModel.online.equals(`online`)? @drawable/ic_online:@drawable/ic_offline}"
                 app:layout_anchor="@id/imgContactUserInfo"
-                app:layout_anchorGravity="end|center"
+                app:layout_anchorGravity="end|bottom"
                 app:layout_constraintBottom_toBottomOf="@+id/imgContactUserInfo"
                 app:layout_constraintEnd_toEndOf="@+id/imgContactUserInfo"
-                app:layout_constraintTop_toTopOf="@+id/imgContactUserInfo"
                 android:contentDescription="@string/imageviewcd" />
 
             <TextView
