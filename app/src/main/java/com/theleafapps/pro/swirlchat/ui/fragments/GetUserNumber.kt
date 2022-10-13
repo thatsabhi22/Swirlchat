@@ -16,6 +16,7 @@ import com.google.firebase.ktx.Firebase
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.FragmentGetUserNumberBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
+import com.theleafapps.pro.swirlchat.util.MyProgressDialog
 import java.util.concurrent.TimeUnit
 
 class GetUserNumber : Fragment() {
@@ -26,6 +27,7 @@ class GetUserNumber : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private var databaseReference: DatabaseReference? = null
     private var binding: FragmentGetUserNumberBinding? = null
+    private lateinit var myProgressDialog: MyProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,13 +36,17 @@ class GetUserNumber : Fragment() {
         val view = inflater.inflate(R.layout.fragment_get_user_number, container, false)
         binding = FragmentGetUserNumberBinding.inflate(inflater, container, false)
 
+        myProgressDialog = MyProgressDialog(activity)
+
         firebaseAuth = Firebase.auth
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         binding?.btnGenerateOTP?.setOnClickListener {
             if (checkNumber()) {
+                MyProgressDialog.show(activity, myProgressDialog, "", "");
                 val phoneNumber = binding?.countryCodePicker?.selectedCountryCodeWithPlus + number
                 sendCode(phoneNumber)
             }
+
         }
 
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -84,6 +90,7 @@ class GetUserNumber : Fragment() {
                     .beginTransaction()
                     .replace(R.id.main_container, VerifyNumber.newInstance(code!!))
                     .commit()
+                myProgressDialog.dismiss()
             }
         }
         return binding?.root
