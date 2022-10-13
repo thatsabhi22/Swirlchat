@@ -7,11 +7,10 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.theleafapps.pro.swirlchat.databinding.ContactItemLayoutBinding
+import com.theleafapps.pro.swirlchat.entities.UserModel
 import com.theleafapps.pro.swirlchat.ui.MessageActivity
 import com.theleafapps.pro.swirlchat.ui.UserInfoActivity
-import com.theleafapps.pro.swirlchat.entities.UserModel
 import java.util.Locale
-import kotlin.collections.ArrayList
 
 class ContactAdapter(private var appContacts: ArrayList<UserModel>) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>(), Filterable {
@@ -38,6 +37,7 @@ class ContactAdapter(private var appContacts: ArrayList<UserModel>) :
             val intent = Intent(it.context, MessageActivity::class.java)
             intent.putExtra("hisId", userModel.uid)
             intent.putExtra("hisImage", userModel.image)
+            intent.putExtra("hisName", userModel.name)
             it.context.startActivity(intent)
         }
     }
