@@ -15,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.databinding.FragmentVerifyNumberBinding
 import com.theleafapps.pro.swirlchat.entities.UserModel
+import com.theleafapps.pro.swirlchat.util.MyProgressDialog
 
 class VerifyNumber : Fragment() {
 
@@ -23,6 +24,7 @@ class VerifyNumber : Fragment() {
     private var firebaseAuth: FirebaseAuth? = null
     private var databaseReference: DatabaseReference? = null
     private var binding: FragmentVerifyNumberBinding? = null
+    private lateinit var myProgressDialog: MyProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +40,12 @@ class VerifyNumber : Fragment() {
         val view = inflater.inflate(R.layout.fragment_verify_number, container, false)
         binding = FragmentVerifyNumberBinding.inflate(inflater, container, false)
 
+        myProgressDialog = MyProgressDialog(activity)
         firebaseAuth = Firebase.auth
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         binding?.btnVerify?.setOnClickListener {
             if (checkPin()) {
+                MyProgressDialog.show(activity, myProgressDialog, "", "");
                 val credential = PhoneAuthProvider.getCredential(code!!, pin)
                 signInUser(credential)
             }
@@ -64,6 +68,7 @@ class VerifyNumber : Fragment() {
                     .beginTransaction()
                     .replace(R.id.main_container, GetUserData())
                     .commit()
+                myProgressDialog.dismiss()
             }
         }
     }
