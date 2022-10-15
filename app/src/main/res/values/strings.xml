@@ -8,7 +8,7 @@
     <string name="otp_sent_msg">We have sent you an OTP for \n verification phone number</string>
     <string name="enter_otp_text">Enter OTP</string>
     <string name="username_edittext_hint">Username</string>
-    <string name="user_status_edittext_text">Hey! I\'m using this app</string>
+    <string name="user_status_edittext_text">Hey! I\'m using SwirlChat</string>
     <string name="done_btn_text">Done</string>
     <string name="get_userdata_image_cd">get userdata image</string>
     <string name="phone_number_edittext_hint">Number</string>
