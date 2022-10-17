@@ -42,7 +42,7 @@ class GetUserNumber : Fragment() {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         binding?.btnGenerateOTP?.setOnClickListener {
             if (checkNumber()) {
-                MyProgressDialog.show(activity, myProgressDialog, "", "");
+                MyProgressDialog.show(activity, myProgressDialog, "", "")
                 val phoneNumber = binding?.countryCodePicker?.selectedCountryCodeWithPlus + number
                 sendCode(phoneNumber)
             }

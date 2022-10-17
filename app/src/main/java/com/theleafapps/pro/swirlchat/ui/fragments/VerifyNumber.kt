@@ -45,7 +45,7 @@ class VerifyNumber : Fragment() {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         binding?.btnVerify?.setOnClickListener {
             if (checkPin()) {
-                MyProgressDialog.show(activity, myProgressDialog, "", "");
+                MyProgressDialog.show(activity, myProgressDialog, "", "")
                 val credential = PhoneAuthProvider.getCredential(code!!, pin)
                 signInUser(credential)
             }
