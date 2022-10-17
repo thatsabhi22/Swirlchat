@@ -26,6 +26,7 @@ import com.theleafapps.pro.swirlchat.R
 import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.theleafapps.pro.swirlchat.databinding.FragmentGetUserDataBinding
 import com.theleafapps.pro.swirlchat.ui.DashboardActivity
+import com.theleafapps.pro.swirlchat.util.MyProgressDialog
 
 class GetUserData : Fragment() {
 
@@ -38,6 +39,7 @@ class GetUserData : Fragment() {
     private var storageReference: StorageReference? = null
     private var binding: FragmentGetUserDataBinding? = null
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var myProgressDialog: MyProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +48,7 @@ class GetUserData : Fragment() {
         val view = inflater.inflate(R.layout.fragment_get_user_data, container, false)
         binding = FragmentGetUserDataBinding.inflate(inflater, container, false)
 
+        myProgressDialog = MyProgressDialog(activity)
         firebaseAuth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         storageReference = FirebaseStorage.getInstance().reference
@@ -53,6 +56,7 @@ class GetUserData : Fragment() {
 
         binding?.btnDataDone?.setOnClickListener {
             if (checkData()) {
+                MyProgressDialog.show(activity, myProgressDialog, "", "")
                 uploadData(username, status, image!!)
             }
         }
@@ -99,6 +103,7 @@ class GetUserData : Fragment() {
 
                     startActivity(Intent(context, DashboardActivity::class.java))
                     requireActivity().finish()
+                    myProgressDialog.dismiss()
                 }
             }
     }
