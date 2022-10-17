@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/toolbar_chat" />
     <corners
-        android:bottomLeftRadius="5dp"
-        android:topLeftRadius="5dp"
-        android:topRightRadius="5dp" />
-    <solid android:color="@color/edittextColor" />
+        android:bottomLeftRadius="8dp"
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp" />
 </shape>
