@@ -11,9 +11,6 @@
         <variable
             name="message"
             type="com.theleafapps.pro.swirlchat.entities.MessageModel" />
-        <variable
-            name="messageTime"
-            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,10 +30,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="125dp"
             android:layout_marginStart="4dp"
             android:layout_toEndOf="@+id/imgMessageImage"
             android:background="@drawable/left_side_background"
+            android:minWidth="125dp"
             android:paddingStart="8dp"
             android:paddingTop="4dp"
             android:paddingEnd="8dp"
@@ -80,6 +77,7 @@
                 android:text="@string/timestamp_tv"
                 android:textColor="@color/white"
                 android:textSize="9sp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/leftMessageImageView" />
