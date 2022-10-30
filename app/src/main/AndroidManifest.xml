@@ -17,9 +17,12 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:theme"
         android:theme="@style/Theme.Swirlchat"
+        tools:replace="android:theme"
         tools:targetApi="q">
+        <activity
+            android:name=".NoConnectivityActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.UserInfoActivity"
             android:exported="false" />
