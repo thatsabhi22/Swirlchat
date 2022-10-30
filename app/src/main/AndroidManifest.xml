@@ -21,9 +21,6 @@
         tools:replace="android:theme"
         tools:targetApi="q">
         <activity
-            android:name=".NoConnectivityActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.UserInfoActivity"
             android:exported="false" />
         <activity
