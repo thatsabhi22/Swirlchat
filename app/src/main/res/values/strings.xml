@@ -36,4 +36,5 @@
     <string name="message_image_cd">message_image_cd</string>
     <string name="close_bottom_sheet">Close</string>
     <string name="no_connectivity_cd">No Connectivity cd</string>
+    <string name="no_internet_msg_text">Please Check your Internet Connection</string>
 </resources>
