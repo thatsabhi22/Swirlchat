@@ -1,8 +1,11 @@
 package com.theleafapps.pro.swirlchat.util
 
+import android.content.Context
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.theleafapps.pro.swirlchat.constants.AppConstants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.theleafapps.pro.swirlchat.R
 
 class AppUtil {
 
@@ -59,7 +62,6 @@ class AppUtil {
     }
 
     fun updateOnlineStatus(status: String) {
-
         val databaseReference =
             FirebaseDatabase.getInstance().getReference("Users").child(getUID()!!)
         val map = HashMap<String, Any>()
@@ -67,6 +69,11 @@ class AppUtil {
         databaseReference.updateChildren(map)
     }
 
+    fun showNoInternetBottomSheetDialog(context: Context){
+        val bottomSheetDialog = BottomSheetDialog(context);
+        bottomSheetDialog.setContentView(R.layout.no_internet_dialog_layout);
+        bottomSheetDialog.show();
+    }
 }
 
 
