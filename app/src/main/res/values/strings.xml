@@ -37,4 +37,5 @@
     <string name="close_bottom_sheet">Close</string>
     <string name="no_connectivity_cd">No Connectivity cd</string>
     <string name="no_internet_msg_text">Please Check your Internet Connection</string>
+    <string name="connectivity_issue_textt">Connectivity Issue</string>
 </resources>
