@@ -41,12 +41,12 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/imageviewcd"
                 android:src="@{chatModel.online.equals(`online`)? @drawable/ic_online:@drawable/ic_offline}"
                 app:layout_anchor="@id/imgContactUserInfo"
                 app:layout_anchorGravity="end|bottom"
                 app:layout_constraintBottom_toBottomOf="@+id/imgContactUserInfo"
-                app:layout_constraintEnd_toEndOf="@+id/imgContactUserInfo"
-                android:contentDescription="@string/imageviewcd" />
+                app:layout_constraintEnd_toEndOf="@+id/imgContactUserInfo" />
 
             <TextView
                 android:id="@+id/txtChatName"
@@ -67,11 +67,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:lines="1"
+                android:maxWidth="280dp"
                 android:text="@{chatModel.lastMessage,default=Nothing}"
                 android:textColor="@color/textColor"
                 android:textSize="13sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/txtChatName"
                 tools:text="Chat Status" />
@@ -80,14 +83,16 @@
                 android:id="@+id/txtChatDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
                 android:text="@{chatModel.date ,default=Nothing}"
                 android:textColor="@color/textColor"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/txtChatStatus"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/txtChatStatus"
+                app:layout_constraintTop_toBottomOf="@+id/txtChatStatus"
                 tools:text="Chat Date" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
