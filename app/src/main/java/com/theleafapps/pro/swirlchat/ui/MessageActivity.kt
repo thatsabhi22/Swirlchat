@@ -73,6 +73,10 @@ class MessageActivity : AppCompatActivity() {
         appPermission = AppPermission()
 
         activityMessageBinding.activity = this
+        activityMessageBinding.messageRecyclerView.postDelayed({
+            activityMessageBinding.messageRecyclerView
+                .scrollToPosition(activityMessageBinding.messageRecyclerView.adapter?.itemCount!! - 1)
+        }, 1000)
 
         if (intent.hasExtra("chatId")) {
 
