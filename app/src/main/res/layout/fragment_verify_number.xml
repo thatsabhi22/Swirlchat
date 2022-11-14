@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/cardBackground"
     tools:context=".ui.fragments.VerifyNumber">
 
     <ImageView
@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:contentDescription="@string/verify_number_image_cd"
-        android:src="@drawable/group_2" />
+        android:src="@drawable/group_1" />
 
     <TextView
         android:id="@+id/txtNumber"
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/enter_otp_text"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/dark_grey"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/otp_sent_msg"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/dark_grey"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -55,8 +55,8 @@
         android:hint="@string/otp_hint"
         android:inputType="number"
         android:padding="5dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="@color/dark_grey"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cursorColor="@color/colorPrimary"
@@ -67,7 +67,7 @@
         app:itemRadius="4dp"
         app:itemSpacing="0dp"
         app:itemWidth="48dp"
-        app:lineColor="@color/colorAccent"
+        app:lineColor="@color/dark_grey"
         app:lineWidth="2dp"
         app:viewType="rectangle" />
 
@@ -79,9 +79,9 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_background"
-        android:text="@string/verify_otp_text"
-        android:textColor="@color/colorAccent"
         android:padding="16dp"
+        android:text="@string/verify_otp_text"
+        android:textColor="@color/cardBackground"
         android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>
