@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/cardBackground"
     tools:context=".ui.fragments.GetUserNumber">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/verify_your_number_text"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/dark_grey"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/enter_your_number_for_verification_text"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/dark_grey"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -56,10 +56,10 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             app:ccp_autoFormatNumber="true"
-            app:ccp_contentColor="@color/colorAccent"
+            app:ccp_contentColor="@color/dark_grey"
             app:ccp_countryPreference="IN"
             app:ccp_defaultPhoneCode="91"
-            app:ccp_showFlag="false" />
+            app:ccp_showFlag="true" />
 
         <View
             android:layout_width="2dp"
@@ -74,14 +74,13 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:autofillHints=""
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/dark_grey"
             android:hint="@string/phone_number_edittext_hint"
             android:inputType="number"
             android:maxLength="10"
             android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/dark_grey" />
     </LinearLayout>
 
     <Button
@@ -94,7 +93,7 @@
         android:background="@color/black"
         android:padding="16dp"
         android:text="@string/generate_otp_text"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/cardBackground"
         android:textSize="20sp"
         android:textStyle="bold" />
 
