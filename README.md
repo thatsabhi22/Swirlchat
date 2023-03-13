@@ -36,5 +36,5 @@ Stay connected with those who matter most in an instant, seamless and secure man
 ![otp_screen](https://user-images.githubusercontent.com/24782276/224590736-47660ccb-4d5f-4fdd-bd49-09fc47049f34.png)
 ![get_user_data](https://user-images.githubusercontent.com/24782276/224590780-5ae6efbf-43f7-4715-b4e9-ea476270e5bb.png)
 ![contact_screen](https://user-images.githubusercontent.com/24782276/224588645-67e57a88-a6c9-487b-aaaa-644a6e2d4d58.png)
-![chat_screen_1](https://user-images.githubusercontent.com/24782276/224588910-30999fa6-0a8c-4784-b803-455a304ae9b6.png)
+![chat_screen_1](https://user-images.githubusercontent.com/24782276/224710611-9c2534d1-0fa3-4d25-a668-93de4c7db18c.png)
 ![profile_screen](https://user-images.githubusercontent.com/24782276/224588937-36aad0dc-4e30-49ce-9031-4473d27be27a.png)
