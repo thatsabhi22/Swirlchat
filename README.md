@@ -30,11 +30,10 @@ Stay connected with those who matter most in an instant, seamless and secure man
   - CardView
   - Card Stack View ( News Section )
 
-
-![splash_screen](https://user-images.githubusercontent.com/24782276/224588591-f4139ed7-96fe-40be-a3cf-a9ed11289c64.png)
-![verify_number](https://user-images.githubusercontent.com/24782276/224590717-30c6820e-42c2-4a76-a3ae-4ddfb65ec47d.png)
-![otp_screen](https://user-images.githubusercontent.com/24782276/224590736-47660ccb-4d5f-4fdd-bd49-09fc47049f34.png)
-![get_user_data](https://user-images.githubusercontent.com/24782276/224590780-5ae6efbf-43f7-4715-b4e9-ea476270e5bb.png)
-![contact_screen](https://user-images.githubusercontent.com/24782276/224588645-67e57a88-a6c9-487b-aaaa-644a6e2d4d58.png)
-![chat_screen_1](https://user-images.githubusercontent.com/24782276/224710611-9c2534d1-0fa3-4d25-a668-93de4c7db18c.png)
-![profile_screen](https://user-images.githubusercontent.com/24782276/224588937-36aad0dc-4e30-49ce-9031-4473d27be27a.png)
+![1 - splash_screen](https://user-images.githubusercontent.com/24782276/227567845-5beefbf4-786a-473a-96a6-4b73432cf636.png)
+![2 - verify_number_screen](https://user-images.githubusercontent.com/24782276/227567966-2d70e16e-051d-456b-940d-83ced5b23a92.png)
+![3 - otp_screen](https://user-images.githubusercontent.com/24782276/227569034-81acb90e-cc59-4d6d-bec9-e22c83bf49f8.png)
+![4 - get_user_data_screen](https://user-images.githubusercontent.com/24782276/227569057-9f16d1cc-fcf1-4557-a9f1-75c84d49588c.png)
+![5 - contacts_screen](https://user-images.githubusercontent.com/24782276/227569153-1593216a-55bb-4b4c-9c18-2868bc83c5a8.png)
+![6 - chat_screen](https://user-images.githubusercontent.com/24782276/227569168-8c274bfe-55bb-4d27-867f-61572abe25c4.png)
+![7 - profile_screen](https://user-images.githubusercontent.com/24782276/227569174-3b6a1694-a7ca-4ff0-9e4c-5b8328088d9c.png)
